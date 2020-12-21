@@ -288,7 +288,7 @@ func NewWithOptions(opts ...Option) *Viper {
 func Reset() {
 	v = New()
 	SupportedExts = []string{"json", "toml", "yaml", "yml", "properties", "props", "prop", "hcl", "dotenv", "env", "ini"}
-	SupportedRemoteProviders = []string{"etcd", "consul", "firestore"}
+	SupportedRemoteProviders = []string{"etcd", "consul", "firestore", "zookeeper"}
 }
 
 type defaultRemoteProvider struct {
@@ -329,7 +329,7 @@ type RemoteProvider interface {
 var SupportedExts = []string{"json", "toml", "yaml", "yml", "properties", "props", "prop", "hcl", "dotenv", "env", "ini"}
 
 // SupportedRemoteProviders are universally supported remote providers.
-var SupportedRemoteProviders = []string{"etcd", "consul", "firestore"}
+var SupportedRemoteProviders = []string{"etcd", "consul", "firestore", "zookeeper"}
 
 func OnConfigChange(run func(in fsnotify.Event)) { v.OnConfigChange(run) }
 func (v *Viper) OnConfigChange(run func(in fsnotify.Event)) {
