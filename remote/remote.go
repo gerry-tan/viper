@@ -8,12 +8,11 @@ package remote
 
 import (
 	"bytes"
+	"github.com/gerry-tan/viper"
 	"io"
 	"os"
 
 	crypt "github.com/bketelsen/crypt/config"
-
-	"github.com/spf13/viper"
 )
 
 type remoteConfigProvider struct{}
